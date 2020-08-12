@@ -1521,6 +1521,8 @@ if(regex.test(email)){
 
 			setTimeout(function(){
 				FM.associateVisitor(email);
+        $('#name').val('');
+        $('#email').val('');
         $('.tq-message').removeClass('showMessage');
 			},5000)
 }
