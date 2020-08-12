@@ -32,49 +32,36 @@
 <meta property="og:description" content="Toppr makes learning effective for you. Prepare for JEE Main, NEET, JEE Advanced, CBSE and other school exams. Start your free trial today!">
 <link rel="stylesheet" href="./Toppr_ Better learning for better results_files/app.css">
 <script async="" src="./Toppr_ Better learning for better results_files/js(3)" type="text/javascript"></script>
-<script type="text/javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)};
-        gtag('js', new Date());
 
 
-        gtag('config', 'UA-42239720-1', {
 
-        });
+<style>
+.tq-message {
+	margin: 0 auto;
+padding: 100px 10px;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+border-radius: 5px;
+color: #000;
+opacity: 0;
+visibility: hidden;
+transition: .5s ease;
+background: #fff;
+text-align: center;
+line-height: 32px;
+}
+.showMessage{
+  opacity: 1;
+  visibility: visible;
+  transition: .5s ease;
+
+}
+</style>
 
 
-        gtag('config', 'AW-944167406', {
-            'send_page_view': false
-        });
-
-
-        function getUserIdCookie() {
-            var nameEQ = "userId=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-         function setUserIdCookie(num) {
-            var date = new Date();
-            date.setTime(date.getTime() + (720 * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-            document.cookie = 'userId=' + (num|| "") + expires + "; path=/";
-        }
-
-            try {
-                var num = getUserIdCookie() || Math.round(Math.pow(10, 6) * Math.random());
-                setUserIdCookie(num);
-                window.dataLayer = window.dataLayer || [];
-                window.dataLayer.push({
-                    userId: num
-                });
-            } catch(e) {}
-
-    </script>
 <script type="text/javascript" async="" src="./Toppr_ Better learning for better results_files/webengage-min-v-6.0.js"></script><script id="_webengage_script_tag" type="text/javascript">
 var webengage;!function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),
 arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z),a="feedback survey notification".split(z),c="options render clear abort".split(z),p="Open Close Submit Complete View Click".split(z),u="identify login logout setAttribute".split(z);if(!r||!r.__v){for(w[b]=r={__queue:[],__v:"6.0",user:{}},i=0;i < l.length;i++)o(r,[l[i]]);for(i=0;i < a.length;i++){for(r[a[i]]={},s=0;s < c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s < p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i < u.length;i++)o(r.user,["user",u[i]]);setTimeout(function(){var f=e.createElement("script"),d=e.getElementById("_webengage_script_tag");f.type="text/javascript",f.async=!0,f.src=("https:"==e.location.protocol?"https://ssl.widgets.webengage.com":"http://cdn.widgets.webengage.com")+"/js/webengage-min-v-6.0.js",d.parentNode.insertBefore(f,d)})}}(window,document,"webengage");webengage.init("82618208");
@@ -142,7 +129,7 @@ close <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2
 <header class="header js-header">
 <div class="header_content">
 <div class="header_joinNow js-home-sign-up-btn">Join now</div>
-<a href="https://www.toppr.com/" class="header_logo" title="Toppr">
+<a href="/toppr" class="header_logo" title="Toppr">
 
 </a>
 <a href="https://www.toppr.com/ask-toppr" class="header_ask_logo" title="Ask">
@@ -379,7 +366,7 @@ Boards
 </div>
 </li>
 <li id="js-feature-btn" class="header_menuListItem js-header-menu-item">
-<a class="header_subMenuTitle" title="Features" href="/demo/features/">
+<a class="header_subMenuTitle" title="Features" href="/toppr/features/">
 Features
 
 </a>
@@ -566,13 +553,18 @@ Learning app for class 5-12
 
 <div class="homeHeader_input">
 <div class="js-home-sign-up-phone-input input input-withButton input-withCountryCode">
-
+<div class="">
 <input type="tel" class="input_input ellipsis" placeholder="sam@example.com" id="email">
 <button class="js-home-sign-up-btn1 button button-smallHeight" id="submit">Join Now</button>
 <div class="form-group" style="display:none">
       <input type="text" class="form-control" placeholder="Your Email" name="sessionrecording" id="sessionrecording">
     </div>
+<div class="tq-message col-md-12">
+    <span>Thank you! </span></br>
+    <span>Watch out for the PDF in your inbox.</span>
+  </div>
 
+</div>
 </div>
 <p class="homeHeader_input_errorMsg hide js-input-error-msg">Please enter a valid number.</p>
 </div>
@@ -1486,7 +1478,6 @@ Social <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/20
 
 <script type="text/javascript">
 $(document).ready(function(){
-  alert("sam")
 
 	$( "#submit" ).click(function( event ) {
 		debugger
@@ -1506,8 +1497,12 @@ if(regex.test(email)){
 			};
 			var identifier = email; //Replace with You Email
 			freshsales.identify(identifier, new_contact);
+      // $('.tq-message').addClass('showMessage');
+
 			setTimeout(function(){
-				FM.associateVisitor(email);
+				// FM.associateVisitor(email);
+        // $('.tq-message').removeClass('showMessage');
+        window.location.href = "/toppr/pricing.html"
 			},5000)
 }
 else{
