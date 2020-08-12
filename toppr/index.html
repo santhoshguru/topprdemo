@@ -8,6 +8,17 @@
   if(window.freshsales.length==0){list='init identify trackPageView trackEvent set'.split(' ');for(var i=0;i<list.length;i++){var nm=list[i];createFcn(nm);}var t=document.createElement('script');t.async=1;t.src='https://d952cmcgwqsjf.cloudfront.net/assets/analytics.js';
   var ft=document.getElementsByTagName('script')[0];ft.parentNode.insertBefore(t,ft);freshsales.init('https://topprcrm.freshworks.com/crm/sales','854b081f450921b983cc9e8b34c411f292ca4137010515d421c4aacba30a661b',false);}})();</script>
 
+  <script>
+    function initFreshChat() {
+      window.fcWidget.init({
+        token: "2df5a321-2af8-46d3-84dc-b62d34e12c1d",
+        host: "https://wchat.myfreshworks.com"
+      });
+    }
+    function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.myfreshworks.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}
+    function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+  </script>
+
 
 <link rel="dns-prefetch" href="https://static-cf.toppr.com/">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
@@ -491,7 +502,7 @@ More</a>
 </div>
 </li>
 <li class="header_menuListItem js-header-menu-item">
-<a class="header_subMenuTitle" title="Pricing" href="https://www.toppr.com/plus/">
+<a class="header_subMenuTitle" title="Pricing" href="/toppr/pricing.html">
 Pricing
 
 </a>
